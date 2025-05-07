@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learn Next App",
+  title: {
+    default: "Next App",
+    template: "%s | Next App",
+  },
   description: "This is next app",
 };
 
