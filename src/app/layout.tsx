@@ -21,6 +21,7 @@ export default function RootLayout({
           style={{
             backgroundColor: "lightblue",
             padding: "1rem",
+            textAlign: "center",
           }}
         >
           <p>Header</p>
@@ -30,6 +31,7 @@ export default function RootLayout({
           style={{
             backgroundColor: "ghostWhite",
             padding: "1rem",
+            textAlign: "center",
           }}
         >
           <p>Footer</p>

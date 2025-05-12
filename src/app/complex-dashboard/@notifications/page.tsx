@@ -1,4 +1,5 @@
 import Card from "@/components/card";
+import Link from "next/link";
 
 export default function Notifications() {
   return (
@@ -9,6 +10,7 @@ export default function Notifications() {
         <li className="p-2 bg-gray-100 rounded">Notification 2</li>
         <li className="p-2 bg-gray-100 rounded">Notification 3</li>
       </ul>
+      <Link href="/complex-dashboard/archived"> Archived </Link>
     </Card>
   );
 }
