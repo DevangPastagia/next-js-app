@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="gap-4 grid">
         <header
           style={{
             backgroundColor: "lightblue",
