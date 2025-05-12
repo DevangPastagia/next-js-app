@@ -1,11 +1,25 @@
 import { notFound } from "next/navigation";
 
-export default function review({
+function getRandomInt(count: number) {
+  return Math.floor(Math.random() * count);
+}
+
+export default async function review({
   params,
 }: {
   params: { id: string; reviewId: string };
 }) {
-  if (parseInt(params.reviewId) > 1000) {
+  const param = await params;
+  const id = param.id;
+  const reviewId = param.reviewId;
+
+  // Simulate a random error
+  const randomError = getRandomInt(10);
+  if (randomError === 1) {
+    throw new Error("Error occurred while fetching the review");
+  }
+
+  if (parseInt(reviewId) > 1000) {
     return notFound();
   }
 
@@ -13,7 +27,7 @@ export default function review({
     <>
       <h1>Welcome to review page</h1>
       <p>
-        The review number is {params.reviewId} of product {params.id}
+        The review number is {reviewId} of product {id}
       </p>
     </>
   );

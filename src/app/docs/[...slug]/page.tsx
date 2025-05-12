@@ -1,4 +1,4 @@
-export default function docs({
+export default async function docs({
   params,
 }: {
   params: {
@@ -10,31 +10,35 @@ export default function docs({
 
   // Now how to handle multiple segments like this
 
-  if (params.slug.length === 1) {
+  const paramsData = (await new Promise((resolve) => resolve(params))) as {
+    slug: string[];
+  };
+
+  if (paramsData.slug.length === 1) {
     return (
       <>
         <p>
           You are reading the document of
-          <b> {params.slug[0]}</b>
+          <b> {paramsData.slug[0]}</b>
         </p>
       </>
     );
-  } else if (params.slug.length === 2) {
+  } else if (paramsData.slug.length === 2) {
     return (
       <>
         <p>
-          You are reading the article <b> {params.slug[1]} </b> of document
-          <b> {params.slug[0]} </b>
+          You are reading the article <b> {paramsData.slug[1]} </b> of document
+          <b> {paramsData.slug[0]} </b>
         </p>
       </>
     );
-  } else if (params.slug.length === 3) {
+  } else if (paramsData.slug.length === 3) {
     return (
       <>
-        <h1>This is the reviews of article {params.slug[1]}</h1>
+        <h1>This is the reviews of article {paramsData.slug[1]}</h1>
         <p>
           <b>Reviews: </b>
-          {params.slug[2]}
+          {paramsData.slug[2]}
         </p>
       </>
     );
