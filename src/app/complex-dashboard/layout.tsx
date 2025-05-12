@@ -3,13 +3,17 @@ export default function Layout({
   users,
   revenue,
   notifications,
+  login,
 }: {
   children: React.ReactNode;
   users: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 }) {
-  return (
+  const isLoginPage = false;
+
+  return isLoginPage ? (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold">Complex Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -23,5 +27,7 @@ export default function Layout({
       </div>
       {children}
     </div>
+  ) : (
+    <div className="flex flex-col gap-4">{login}</div>
   );
 }

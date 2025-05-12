@@ -9,7 +9,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
     display: "flex",
     gap: "16px",
     border: "1px solid #eaeaea",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   };
 
