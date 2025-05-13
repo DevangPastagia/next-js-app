@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="gap-4 grid h-screen grid-rows-[auto_1fr_auto]">
+      <body className="grid h-screen grid-rows-[auto_1fr_auto]">
         <header
           style={{
             backgroundColor: "lightblue",
@@ -26,7 +26,7 @@ export default function RootLayout({
         >
           <p>Header</p>
         </header>
-        {children}
+        <main className="p-4 h-full">{children}</main>
         <footer
           style={{
             backgroundColor: "ghostWhite",
